@@ -150,15 +150,24 @@
     <div class="expInputs">
       <h4>Experiments</h4>
       <input type="text" placeholder="Exp.1" [ngModel]="exp1" />
-      <button type="submit" class="btn btn-primary" (click)="animationGrinds()">
+      <button type="submit" class="btn btn-primary" (click)="runProcess(exp1)">
         Run
       </button>
       <input type="text" placeholder="Exp.2" [ngModel]="exp2" />
-      <button type="submit" class="btn btn-primary" (click)="animationStirs()">
+      <button type="submit" class="btn btn-primary" (click)="runProcess(exp2)">
         Run
       </button>
       <input type="text" placeholder="Exp.3" [ngModel]="exp3" />
-      <button class="" type="submit" class="btn btn-primary">Run</button>
+      <button
+        class=""
+        type="submit"
+        class="btn btn-primary"
+        (click)="runProcess(exp3)"
+      >
+        Run
+      </button>
+
+      <button type="submit" (click)="checkProcess()">Check New func</button>
     </div>
   </div>
 </div>

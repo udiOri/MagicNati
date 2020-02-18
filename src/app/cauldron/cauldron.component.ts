@@ -64,14 +64,14 @@ export class CauldronComponent implements OnInit {
       expNew.process3 = step3;
 
       this.expirementArray.push(expNew);
+      this.showExp();
 
       console.log(this.expirementArray);
     }
     if (this.expirementArray.length > 2) {
-      this.arrayFull = true; //fix this. shpuld stop before the 4 click
+      this.arrayFull = true;
     }
     form.reset();
-    this.showExp();
   }
 
   showExp() {
@@ -87,7 +87,49 @@ export class CauldronComponent implements OnInit {
       }
     }
   }
-  ///////////////////////////////// process animations
+
+  runProcess(expnNameFromInput: string) {
+    console.log(expnNameFromInput);
+
+    for (let i = 0; i < this.expirementArray.length; i++) {
+      if (expnNameFromInput === this.expirementArray[i].expName) {
+        setTimeout(() => {
+          this.checkProcess(this.expirementArray[i].process1);
+          console.log(this.expirementArray[i].process1);
+        }, 1000);
+        setTimeout(() => {
+          this.checkProcess(this.expirementArray[i].process2);
+          console.log(this.expirementArray[i].process2);
+        }, 1000);
+        setTimeout(() => {
+          this.checkProcess(this.expirementArray[i].process3);
+          console.log(this.expirementArray[i].process3);
+        }, 1000);
+      }
+    }
+  }
+
+  checkProcess(processValue: string) {
+    let actionArray: string[] = [
+      " Mixing",
+      " Slicing",
+      " Grinding",
+      " Sttiring"
+    ];
+
+    if (processValue == actionArray[0]) {
+      this.animationMixes();
+    } else if (processValue === actionArray[1]) {
+      this.animationSlices();
+    } else if (processValue === actionArray[2]) {
+      this.animationGrinds();
+    } else if (processValue === actionArray[3]) {
+      this.animationStirs();
+    }
+  }
+
+  ///////////////////////////// process animation
+
   animationMixes() {
     this.mixes = true;
     setTimeout(() => {
@@ -99,6 +141,9 @@ export class CauldronComponent implements OnInit {
     setTimeout(() => {
       this.animationHerring();
     }, 3000);
+    setTimeout(() => {
+      this.mixes = false;
+    }, 4000);
   }
 
   animationSlices() {
@@ -112,6 +157,9 @@ export class CauldronComponent implements OnInit {
     setTimeout(() => {
       this.animationPepper();
     }, 3000);
+    setTimeout(() => {
+      this.slices = false;
+    }, 4000);
   }
 
   animationGrinds() {
@@ -122,6 +170,9 @@ export class CauldronComponent implements OnInit {
     setTimeout(() => {
       this.animationCrock();
     }, 2000);
+    setTimeout(() => {
+      this.grinds = false;
+    }, 3000);
   }
 
   animationStirs() {
@@ -132,9 +183,12 @@ export class CauldronComponent implements OnInit {
     setTimeout(() => {
       this.animationDragon();
     }, 2000);
+    setTimeout(() => {
+      this.stirs = false;
+    }, 3000);
   }
 
-  ///////////////////////////////////////////////////////// ingr animations
+  ///////////////////////////////// ingr animations
 
   animationFruit() {
     let tl = new TimelineMax();
