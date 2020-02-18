@@ -75,13 +75,20 @@
     <div class="ingr">
       <img
         #dragon
+        class="ingr-img"
         *ngIf="stirs"
         src="../../assets/dragon-sweat.png"
         alt="dragon"
       />
     </div>
     <div class="ingr">
-      <img #soot *ngIf="stirs" src="../../assets/soot.png" alt="soot" />
+      <img
+        #soot
+        class="ingr-img"
+        *ngIf="stirs"
+        src="../../assets/soot.png"
+        alt="soot"
+      />
     </div>
 
     <div class="cauldron">
@@ -143,11 +150,11 @@
     <div class="expInputs">
       <h4>Experiments</h4>
       <input type="text" placeholder="Exp.1" [ngModel]="exp1" />
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" (click)="animationGrinds()">
         Run
       </button>
       <input type="text" placeholder="Exp.2" [ngModel]="exp2" />
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" (click)="animationStirs()">
         Run
       </button>
       <input type="text" placeholder="Exp.3" [ngModel]="exp3" />

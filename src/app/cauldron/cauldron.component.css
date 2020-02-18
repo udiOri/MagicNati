@@ -22,8 +22,7 @@ html {
 
 .pot .ingr {
   position: absolute;
-  left: 53%;
-  top: 50%;
+  left: 48%;
 }
 
 .pot .ingr .ingr-img {
@@ -35,31 +34,3 @@ html {
   height: 20rem;
   background-color: blanchedalmond;
 }
-
-/* .mainForm {
-  height: 10rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: baseline;
-}
-
-.mainForm > h4 {
-  display: flex;
-  align-items: baseline;
-  align-content: flex-start;
-}
-
-.mainForm > ol > li {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-}
-
-.secondForm {
-  border-left: solid black 2px;
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-} */
