@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="pot">
+    <div class="ingr">
+      <img
+        #fruit
+        *ngIf="mixes"
+        src="../../assets/fruit.png"
+        class="ingr-img"
+        alt="fruit"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #honey
+        *ngIf="mixes"
+        src="../../assets/honey.png"
+        class="ingr-img"
+        alt="honey"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #herring
+        *ngIf="mixes"
+        src="../../assets/red_herring.png"
+        class="ingr-img"
+        alt="herring"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #milk
+        *ngIf="slices"
+        src="../../assets/milk.png"
+        class="ingr-img"
+        alt="milk"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #salt
+        *ngIf="slices"
+        src="../../assets/salt.png"
+        class="ingr-img"
+        alt="salt"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #peppermint
+        *ngIf="slices"
+        src="../../assets/soot.png"
+        class="ingr-img"
+        alt="peppermint"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #magic
+        *ngIf="grinds"
+        class="ingr-img"
+        src="../../assets/magic_ink.png"
+        alt="magic"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #crocodile
+        class="ingr-img"
+        *ngIf="grinds"
+        src="../../assets/crocodiletears.png"
+        alt="crocodile"
+      />
+    </div>
+    <div class="ingr">
+      <img
+        #dragon
+        *ngIf="stirs"
+        src="../../assets/dragon-sweat.png"
+        alt="dragon"
+      />
+    </div>
+    <div class="ingr">
+      <img #soot *ngIf="stirs" src="../../assets/soot.png" alt="soot" />
+    </div>
+
+    <div class="cauldron">
+      <img src="../../assets/cauldron.png" alt="cauldron" />
+    </div>
+  </div>
+  <div class="forms">
+    <form class="mainForm" [formGroup]="Steps" (ngSubmit)="addExp(Steps)">
+      <h4>Dashboard</h4>
+      <input
+        type="text"
+        formControlName="expName"
+        placeholder="Exp. name"
+        required
+      />
+      <h4>Steps</h4>
+      <ol>
+        <li>
+          <select formControlName="step1">
+            <option value="" disabled selected hidden>
+              Please selct your action</option
+            >
+
+            <option *ngFor="let data of myData" value=" {{ data.name }}">
+              {{ data.name }}</option
+            >
+          </select>
+        </li>
+        <li>
+          <select formControlName="step2">
+            <option value="" disabled selected hidden>
+              Please selct your action</option
+            >
+
+            <option *ngFor="let data of myData" value=" {{ data.name }}">
+              {{ data.name }}</option
+            >
+          </select>
+        </li>
+        <li>
+          <select formControlName="step3">
+            <option value="" disabled selected hidden>
+              Please selct your action</option
+            >
+
+            <option *ngFor="let data of myData" value=" {{ data.name }}">
+              {{ data.name }}</option
+            >
+          </select>
+        </li>
+        <button type="submit" class="btn btn-success" [disabled]="arrayFull">
+          Add
+        </button>
+        <div class="alert alert-danger" role="alert" *ngIf="arrayFull">
+          <span>Array is full. start running Experiments!!</span>
+        </div>
+      </ol>
+    </form>
+    <div class="expInputs">
+      <h4>Experiments</h4>
+      <input type="text" placeholder="Exp.1" [ngModel]="exp1" />
+      <button type="submit" class="btn btn-primary">
+        Run
+      </button>
+      <input type="text" placeholder="Exp.2" [ngModel]="exp2" />
+      <button type="submit" class="btn btn-primary">
+        Run
+      </button>
+      <input type="text" placeholder="Exp.3" [ngModel]="exp3" />
+      <button class="" type="submit" class="btn btn-primary">Run</button>
+    </div>
+  </div>
+</div>

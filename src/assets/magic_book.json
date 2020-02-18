@@ -1,0 +1,42 @@
+{
+  "processes": [
+    {
+      "id": 1,
+      "name": "Mixing",
+      "action": "mixes",
+      "ingredients": [
+        "fruit of Metus bush",
+        "honey",
+        "red herring"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Slicing",
+      "action": "slices",
+      "ingredients": [
+        "milk",
+        "salt",
+        "Peppermint"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Grinding",
+      "action": "grinds",
+      "ingredients": [
+        "magic ink",
+        "crocodile tears"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Stirring",
+      "action": "stirs",
+      "ingredients": [
+        "twelveteen drops of dragon sweat",
+        "seastone ounce of soot"
+      ]
+    }
+  ]
+}

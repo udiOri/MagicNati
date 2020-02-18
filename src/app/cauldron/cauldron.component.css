@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.pot {
+  height: 40rem;
+  background-image: linear-gradient(#fff, #565d8f);
+  position: relative;
+}
+.pot .cauldron {
+  position: absolute;
+  left: 50%;
+  margin-left: -131.5px;
+  top: 64.5%;
+}
+
+.pot .ingr {
+  position: absolute;
+  left: 53%;
+  top: 50%;
+}
+
+.pot .ingr .ingr-img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.forms {
+  height: 20rem;
+  background-color: blanchedalmond;
+}
+
+/* .mainForm {
+  height: 10rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.mainForm > h4 {
+  display: flex;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+.mainForm > ol > li {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.secondForm {
+  border-left: solid black 2px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+} */
